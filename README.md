@@ -126,6 +126,12 @@ df.write.jdbc(
 )
 ```
 
+Running the code above on a serverless cluster will result in an error.  
+![serverless-write-error](./databricks/ServerlessWriteFails.png)
+
+If you ask the Databricks AI assistant to Diagnose error, it will tell you that writing with jdbc isn't supported with serverless and you'll need to switch to a provisioned cluster instead.
+![diagnose-error](./databricks/DBXAssistant.png)
+
 To verify that the data was written as expected, you can read the table data into a dataframe
 ``` python
 df_check = spark.read.jdbc(
@@ -217,6 +223,11 @@ df.write.jdbc(
     properties=connection_properties
 )
 ```
+Running the code above on a serverless cluster will result in an error.  
+![serverless-write-error](./databricks/ServerlessWriteFails.png)
+
+If you ask the Databricks AI assistant to Diagnose error, it will tell you that writing with jdbc isn't supported with serverless and you'll need to switch to a provisioned cluster instead.
+![diagnose-error](./databricks/DBXAssistant.png)
 
 Finally, let's add a cell to read the table contents into a dataframe to confirm that the data was written.
 ``` python
