@@ -26,7 +26,7 @@ The secret value will appear on the screen. Do not leave the page before recordi
 Create an Azure Key Vault in the same region
 ![azure-keyvault](./databricks/CreateKeyVault.png)
 
-Assign yourself and the Azure Databricks application the Key Vault Secrets Officer role. (Databricks will access the key vault referenced in your secrets scope using the Databricks application's own service principal, which is unique to your tenant. You might expect a Unity Catalog-enabled workspace to use the workspace's managed identity to connect to the key vault, but unfortunately that's not the case.)
+Assign yourself the [Key Vault Secrets Officer](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/security#key-vault-secrets-officer) role and the Azure Databricks application the [Key Vault Secrets User](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/security#key-vault-secrets-user) role. (Databricks will access the key vault referenced in your secrets scope using the Databricks application's own service principal, which is unique to your tenant. You might expect a Unity Catalog-enabled workspace to use the workspace's managed identity to connect to the key vault, but unfortunately that's not the case.)
 ![add-role](./databricks/AddKeyVaultRole.png)
 ![secrets-officer](./databricks/KVSecretsOfficerRole.png)
 ![azure-databricks](./databricks/AssignDatabricksAppRBAC.png)
