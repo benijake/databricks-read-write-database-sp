@@ -224,7 +224,7 @@ df.write.jdbc(
 )
 ```
 Running the code above on a serverless cluster will result in an error.  
-![serverless-write-error](./databricks/ServerlessWriteFails.png)
+![serverless-write-error](./databricks/ServerlessWriteFailsPSQL.png)
 
 If you ask the Databricks AI assistant to Diagnose error, it will tell you that writing with jdbc isn't supported with serverless and you'll need to switch to a provisioned cluster instead.
 ![diagnose-error](./databricks/DBXAssistant.png)
